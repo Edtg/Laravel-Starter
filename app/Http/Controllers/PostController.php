@@ -9,12 +9,12 @@ class PostController extends Controller
 {
     public function showPosts()
     {
-        return view('posts.allPosts');
+        return view('posts.allPosts', ['posts' => Post::all()]);
     }
 
     public function showPost($id)
     {
-        return view('posts.post');
+        return view('posts.post', ['post' => Post::findOrFail($id)]);
     }
 
     public function newPost()
