@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function showPosts()
     {
-        return view('posts.allPosts', ['posts' => Post::all()]);
+        return view('posts.allPosts', ['posts' => Post::where('is_published', true)->get()]);
     }
 
     public function showPost($id)
